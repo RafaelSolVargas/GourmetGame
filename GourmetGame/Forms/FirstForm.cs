@@ -12,6 +12,8 @@ namespace GourmetGame
 
             FormsResizeHelper.CenterControlHorizontal(this, textLabel);
             FormsResizeHelper.CenterControlHorizontal(this, startGameButton);
+
+            Resize += ResizeComponents;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -26,6 +28,12 @@ namespace GourmetGame
             var questionForm = new ConfirmDenayForm();
 
             questionForm.ShowDialog();
+        }
+
+        private void ResizeComponents(object? sender, EventArgs e)
+        {
+            FormsResizeHelper.CenterControlHorizontal(this, textLabel);
+            FormsResizeHelper.CenterControlHorizontal(this, startGameButton);
         }
     }
 }

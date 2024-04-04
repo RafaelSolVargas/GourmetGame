@@ -75,7 +75,7 @@
             // pictureBox1
             // 
             pictureBox1.ImageLocation = "E:\\Work\\Objective\\GourmetGame\\GourmetGame\\Images\\question-icon.png";
-            pictureBox1.Location = new Point(10, 10);
+            pictureBox1.Location = new Point(8, 8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(44, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;

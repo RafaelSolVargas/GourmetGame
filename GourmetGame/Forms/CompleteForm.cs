@@ -14,7 +14,7 @@ namespace GourmetGame.Forms
 
             NewFood = newFood;
             FailedFood = failedFood;
-            completeQuestion.Text = $"{newFood} é ______ mas {FailedFood} não.";
+            completeQuestion.Text = $"{newFood} é ___________ mas {FailedFood} não.";
 
             FormBorderStyle = FormBorderStyle.FixedSingle;
             ControlBox = true;

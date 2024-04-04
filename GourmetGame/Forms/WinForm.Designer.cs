@@ -30,6 +30,8 @@
         {
             label1 = new Label();
             closeWinButton = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -37,11 +39,11 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.ImageAlign = ContentAlignment.BottomCenter;
-            label1.Location = new Point(82, 19);
+            label1.Location = new Point(80, 25);
             label1.Name = "label1";
             label1.Size = new Size(90, 15);
             label1.TabIndex = 0;
-            label1.Text = "Acertei denovo!";
+            label1.Text = "Acertei de novo!";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // closeWinButton
@@ -54,18 +56,30 @@
             closeWinButton.UseVisualStyleBackColor = true;
             closeWinButton.Click += CloseWinButton_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.ImageLocation = "E:\\Work\\Objective\\GourmetGame\\GourmetGame\\Images\\exclamation-icon.png";
+            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(40, 40);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            // 
             // WinForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(245, 91);
+            Controls.Add(pictureBox1);
             Controls.Add(closeWinButton);
             Controls.Add(label1);
             Name = "WinForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Jogo Gourmet";
             Load += WinForm_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -74,5 +88,6 @@
 
         private Label label1;
         private Button closeWinButton;
+        private PictureBox pictureBox1;
     }
 }

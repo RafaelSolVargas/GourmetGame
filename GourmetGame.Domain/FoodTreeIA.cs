@@ -7,7 +7,7 @@ public class FoodTreeIA
     public FoodTreeIA()
     {
         var foodCaseYes = new FoodNode("Lasanha", null!);
-        var foodCaseNo = new FoodNode("Bolo de chocolate", null!);
+        var foodCaseNo = new FoodNode("Bolo de Chocolate", null!);
         
         // The rootNode will not have a parent
         _RootNode = new QualityNode("massa", foodCaseYes, foodCaseNo, null!);

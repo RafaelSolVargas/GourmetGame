@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>Images\GourmetGameIcon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,12 +14,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GourmetGame.Controllers\GourmetGame.Controllers.csproj" />
-    <ProjectReference Include="..\GourmetGame.Domain\GourmetGame.Domain.csproj" />
+    <Content Include="Images\GourmetGameIcon.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Images\" />
+    <ProjectReference Include="..\GourmetGame.Controllers\GourmetGame.Controllers.csproj" />
+    <ProjectReference Include="..\GourmetGame.Domain\GourmetGame.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
