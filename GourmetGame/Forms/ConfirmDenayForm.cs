@@ -21,7 +21,7 @@ public partial class ConfirmDenayForm : Form
     }
 
     private bool IsFoodAttempt { get; set; } = false;
-    private bool HasProcessed { get; set; } = false;
+    private bool HasProcessedAlready { get; set; } = false;
 
     private void ConfirmDenayForm_Load(object sender, EventArgs e)
     {
@@ -44,7 +44,7 @@ public partial class ConfirmDenayForm : Form
 
     private void Event_FormClosing(object? sender, FormClosingEventArgs e)
     {
-        if (HasProcessed)
+        if (HasProcessedAlready)
         {
             return;
         }
@@ -70,7 +70,7 @@ public partial class ConfirmDenayForm : Form
 
         Hide();
 
-        HasProcessed = true;
+        HasProcessedAlready = true;
 
         nextForm.ShowDialog();
     }
@@ -99,7 +99,7 @@ public partial class ConfirmDenayForm : Form
 
         Hide();
 
-        HasProcessed = true;
+        HasProcessedAlready = true;
 
         nextForm.ShowDialog();
     }

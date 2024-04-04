@@ -7,7 +7,7 @@ namespace GourmetGame.Forms
     {
         private string NewFood { get; set; }
         private string FailedFood { get; set; }
-        private bool HasProceed { get; set; } = false;
+        private bool HasProcessedAlready { get; set; } = false;
         public CompleteForm(string newFood, string failedFood)
         {
             InitializeComponent();
@@ -52,7 +52,7 @@ namespace GourmetGame.Forms
 
         private void Event_FormClosing(object? sender, FormClosingEventArgs e)
         {
-            if (HasProceed)
+            if (HasProcessedAlready)
             {
                 return;
             }
@@ -62,7 +62,7 @@ namespace GourmetGame.Forms
 
         private void ProcessInput(string newQualityName)
         {
-            HasProceed = true;
+            HasProcessedAlready = true;
 
             GourmetGameController.Handler.InsertNewFood(newQualityName, NewFood);
         }

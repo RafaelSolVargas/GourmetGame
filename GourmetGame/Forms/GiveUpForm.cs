@@ -5,7 +5,7 @@ namespace GourmetGame.Forms;
 
 public partial class GiveUpForm : Form
 {
-    private bool HasProcessed { get; set; } = false;
+    private bool HasProcessedAlready { get; set; } = false;
 
     public GiveUpForm()
     {
@@ -53,7 +53,7 @@ public partial class GiveUpForm : Form
 
     private void Event_FormClosing(object? sender, FormClosingEventArgs e)
     {
-        if (HasProcessed)
+        if (HasProcessedAlready)
         {
             return;
         }
@@ -63,7 +63,7 @@ public partial class GiveUpForm : Form
 
     private void ProcessInput(string newFood)
     {
-        HasProcessed = true;
+        HasProcessedAlready = true;
 
         var failedFood = GourmetGameController.Handler.GetCurrentNode().Name;
 
