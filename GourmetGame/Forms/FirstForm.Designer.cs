@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            StartGame = new Button();
-            label1 = new Label();
+            startGameButton = new Button();
+            textLabel = new Label();
             SuspendLayout();
             // 
             // StartGame
             // 
-            StartGame.Location = new Point(93, 65);
-            StartGame.Name = "StartGame";
-            StartGame.Size = new Size(75, 23);
-            StartGame.TabIndex = 0;
-            StartGame.Text = "Ok";
-            StartGame.UseVisualStyleBackColor = true;
-            StartGame.Click += StartGame_Click;
+            startGameButton.Location = new Point(93, 65);
+            startGameButton.Name = "StartGame";
+            startGameButton.Size = new Size(75, 23);
+            startGameButton.TabIndex = 0;
+            startGameButton.Text = "Ok";
+            startGameButton.UseVisualStyleBackColor = true;
+            startGameButton.Click += StartGame_Click;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(44, 29);
-            label1.Name = "label1";
-            label1.Size = new Size(165, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Pense em um prato que gosta";
+            textLabel.AutoSize = true;
+            textLabel.Location = new Point(44, 29);
+            textLabel.Name = "label1";
+            textLabel.Size = new Size(165, 15);
+            textLabel.TabIndex = 1;
+            textLabel.Text = "Pense em um prato que gosta";
             // 
             // FirstForm
             // 
@@ -57,8 +57,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(267, 110);
-            Controls.Add(label1);
-            Controls.Add(StartGame);
+            Controls.Add(textLabel);
+            Controls.Add(startGameButton);
             Name = "FirstForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Jogo Gourmet";
@@ -69,7 +69,7 @@
 
         #endregion
 
-        private Button StartGame;
-        private Label label1;
+        private Button startGameButton;
+        private Label textLabel;
     }
 }

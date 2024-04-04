@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Forms\0sm23opj.q0n~" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\GourmetGame.Controllers\GourmetGame.Controllers.csproj" />
     <ProjectReference Include="..\GourmetGame.Domain\GourmetGame.Domain.csproj" />
   </ItemGroup>

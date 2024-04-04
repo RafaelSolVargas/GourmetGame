@@ -37,7 +37,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.ImageAlign = ContentAlignment.BottomCenter;
-            label1.Location = new Point(67, 22);
+            label1.Location = new Point(82, 19);
             label1.Name = "label1";
             label1.Size = new Size(90, 15);
             label1.TabIndex = 0;
@@ -46,9 +46,9 @@
             // 
             // closeWinButton
             // 
-            closeWinButton.Location = new Point(67, 49);
+            closeWinButton.Location = new Point(82, 52);
             closeWinButton.Name = "closeWinButton";
-            closeWinButton.Size = new Size(75, 23);
+            closeWinButton.Size = new Size(74, 27);
             closeWinButton.TabIndex = 1;
             closeWinButton.Text = "Ok";
             closeWinButton.UseVisualStyleBackColor = true;
@@ -59,12 +59,13 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(220, 91);
+            ClientSize = new Size(245, 91);
             Controls.Add(closeWinButton);
             Controls.Add(label1);
             Name = "WinForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Jogo Gourmet";
+            Load += WinForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

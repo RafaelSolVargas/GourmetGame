@@ -1,5 +1,6 @@
 using GourmetGame.Controllers;
 using GourmetGame.Forms;
+using GourmetGame.Helpers;
 
 namespace GourmetGame
 {
@@ -8,6 +9,9 @@ namespace GourmetGame
         public FirstForm()
         {
             InitializeComponent();
+
+            FormsResizeHelper.CenterControlHorizontal(this, textLabel);
+            FormsResizeHelper.CenterControlHorizontal(this, startGameButton);
         }
 
         private void Form1_Load(object sender, EventArgs e)

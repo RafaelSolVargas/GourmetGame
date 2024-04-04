@@ -1,4 +1,5 @@
 ﻿using GourmetGame.Controllers;
+using GourmetGame.Helpers;
 
 namespace GourmetGame.Forms
 {
@@ -14,29 +15,53 @@ namespace GourmetGame.Forms
             NewFood = newFood;
             FailedFood = failedFood;
             completeQuestion.Text = $"{newFood} é ______ mas {FailedFood} não.";
+
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            ControlBox = true;
+            MinimizeBox = false;
+            MaximizeBox = false;
+            ShowIcon = false;
+
+            FormsResizeHelper.CenterControlHorizontal(this, completeQuestion);
+            FormsResizeHelper.CenterControlHorizontal(this, newQualityInput);
+            FormsResizeHelper.CenterControlsHorizontally(this, confirmCompleteButton, cancelCompleteButton);
+
+            FormClosing += Event_FormClosing;
         }
 
         private void ConfirmClick(object sender, EventArgs e)
         {
-            ProceedAnyway();
-        }
-
-        private void CompleteForm_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void ProceedAnyway()
-        {
             var newQualityName = newQualityInput.Text;
 
-            GourmetGameController.Handler.InsertNewFood(newQualityName, NewFood);
+            if (newQualityName == string.Empty)
+            {
+                newQualityName = "null";
+            }
+
+            ProcessInput(newQualityName);
 
             Close();
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            ProceedAnyway();
+            ProcessInput("null");
+
+            Close();
+        }
+
+        private void Event_FormClosing(object? sender, FormClosingEventArgs e)
+        {
+            ProcessInput("null");
+        }
+
+        private void ProcessInput(string newQualityName)
+        {
+            GourmetGameController.Handler.InsertNewFood(newQualityName, NewFood);
+        }
+
+        private void CompleteForm_Load(object sender, EventArgs e)
+        {
         }
     }
 }

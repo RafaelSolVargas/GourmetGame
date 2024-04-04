@@ -1,5 +1,6 @@
 ﻿using GourmetGame.Controllers;
 using GourmetGame.Domain.Enums;
+using GourmetGame.Helpers;
 
 namespace GourmetGame.Forms;
 
@@ -9,6 +10,14 @@ public partial class ConfirmDenayForm : Form
     {
         InitializeComponent();
         AutoSize = true;
+        Resize += ConfirmDenayForm_Resize;
+        FormBorderStyle = FormBorderStyle.FixedSingle;
+        ControlBox = true;
+        MinimizeBox = false;
+        MaximizeBox = false;
+        ShowIcon = false;
+
+        FormClosing += Event_FormClosing;
     }
 
     private bool IsFoodAttempt { get; set; } = false;
@@ -27,6 +36,18 @@ public partial class ConfirmDenayForm : Form
 
     private void ButtonNoClick(object sender, EventArgs e)
     {
+        ProcessToNoOption();
+
+        Close();
+    }
+
+    private void Event_FormClosing(object? sender, FormClosingEventArgs e)
+    {
+        ProcessToNoOption();
+    }
+
+    private void ProcessToNoOption()
+    {
         Form nextForm;
 
         // If tried to attempt a food and failed
@@ -44,11 +65,16 @@ public partial class ConfirmDenayForm : Form
         Hide();
 
         nextForm.ShowDialog();
+    }
+
+    private void ButtonYesClick(object sender, EventArgs e)
+    {
+        ProcessToYesOption();
 
         Close();
     }
 
-    private void ButtonYesClick(object sender, EventArgs e)
+    private void ProcessToYesOption()
     {
         Form nextForm;
         // If tried to attempt a food and failed
@@ -66,7 +92,11 @@ public partial class ConfirmDenayForm : Form
         Hide();
 
         nextForm.ShowDialog();
-        
-        Close();
+    }
+
+    private void ConfirmDenayForm_Resize(object? sender, EventArgs e)
+    {
+        FormsResizeHelper.CenterControlHorizontal(this, Question);
+        FormsResizeHelper.CenterControlsHorizontally(this, confirmYes, confirmNo);
     }
 }
