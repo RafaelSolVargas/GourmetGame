@@ -21,6 +21,7 @@ public partial class ConfirmDenayForm : Form
     }
 
     private bool IsFoodAttempt { get; set; } = false;
+    private bool HasProcessed { get; set; } = false;
 
     private void ConfirmDenayForm_Load(object sender, EventArgs e)
     {
@@ -43,6 +44,11 @@ public partial class ConfirmDenayForm : Form
 
     private void Event_FormClosing(object? sender, FormClosingEventArgs e)
     {
+        if (HasProcessed)
+        {
+            return;
+        }
+
         ProcessToNoOption();
     }
 
@@ -63,6 +69,8 @@ public partial class ConfirmDenayForm : Form
         }
 
         Hide();
+
+        HasProcessed = true;
 
         nextForm.ShowDialog();
     }
@@ -91,12 +99,14 @@ public partial class ConfirmDenayForm : Form
 
         Hide();
 
+        HasProcessed = true;
+
         nextForm.ShowDialog();
     }
 
     private void ConfirmDenayForm_Resize(object? sender, EventArgs e)
     {
-        FormsResizeHelper.CenterControlHorizontal(this, Question);
+        FormsResizeHelper.CenterControlHorizontal(this, Question, 30);
         FormsResizeHelper.CenterControlsHorizontally(this, confirmYes, confirmNo);
     }
 }

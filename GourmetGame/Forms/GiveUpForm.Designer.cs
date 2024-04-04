@@ -30,16 +30,19 @@ namespace GourmetGame.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GiveUpForm));
             label1 = new Label();
             actualFoodInputText = new TextBox();
             confirmNewFoodButton = new Button();
             cancelNewFoodButton = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(84, 22);
+            label1.Location = new Point(65, 12);
             label1.Name = "label1";
             label1.Size = new Size(138, 15);
             label1.TabIndex = 0;
@@ -47,14 +50,14 @@ namespace GourmetGame.Forms
             // 
             // actualFoodInputText
             // 
-            actualFoodInputText.Location = new Point(61, 52);
+            actualFoodInputText.Location = new Point(65, 46);
             actualFoodInputText.Name = "actualFoodInputText";
-            actualFoodInputText.Size = new Size(186, 23);
+            actualFoodInputText.Size = new Size(153, 23);
             actualFoodInputText.TabIndex = 1;
             // 
             // confirmNewFoodButton
             // 
-            confirmNewFoodButton.Location = new Point(75, 84);
+            confirmNewFoodButton.Location = new Point(46, 84);
             confirmNewFoodButton.Name = "confirmNewFoodButton";
             confirmNewFoodButton.Size = new Size(75, 23);
             confirmNewFoodButton.TabIndex = 2;
@@ -64,7 +67,7 @@ namespace GourmetGame.Forms
             // 
             // cancelNewFoodButton
             // 
-            cancelNewFoodButton.Location = new Point(156, 84);
+            cancelNewFoodButton.Location = new Point(143, 84);
             cancelNewFoodButton.Name = "cancelNewFoodButton";
             cancelNewFoodButton.Size = new Size(75, 23);
             cancelNewFoodButton.TabIndex = 3;
@@ -72,12 +75,24 @@ namespace GourmetGame.Forms
             cancelNewFoodButton.UseVisualStyleBackColor = true;
             cancelNewFoodButton.Click += CancelNewFoodButton_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.ImageLocation = "E:\\Work\\Objective\\GourmetGame\\GourmetGame\\Images\\question-icon.png";
+            pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
+            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(43, 39);
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            // 
             // GiveUpForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(316, 119);
+            ClientSize = new Size(277, 122);
+            Controls.Add(pictureBox1);
             Controls.Add(cancelNewFoodButton);
             Controls.Add(confirmNewFoodButton);
             Controls.Add(actualFoodInputText);
@@ -86,6 +101,7 @@ namespace GourmetGame.Forms
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Desisto";
             Load += GiveUpForm_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -96,5 +112,6 @@ namespace GourmetGame.Forms
         private TextBox actualFoodInputText;
         private Button confirmNewFoodButton;
         private Button cancelNewFoodButton;
+        private PictureBox pictureBox1;
     }
 }

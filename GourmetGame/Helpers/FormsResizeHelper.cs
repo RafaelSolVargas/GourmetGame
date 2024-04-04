@@ -2,10 +2,11 @@
 
 public static class FormsResizeHelper
 {
-    public static void CenterControlHorizontal(Control parent, Control control)
+    public static void CenterControlHorizontal(Control parent, Control control, int paddingLeftAxisX = 0)
     {
         int xCenter = (parent.ClientSize.Width - control.Width) / 2;
-        control.Location = new Point(xCenter, control.Location.Y);
+
+        control.Location = new Point(xCenter + paddingLeftAxisX, control.Location.Y);
     }
 
     public static void CenterControlsHorizontally(Control parent, params Control[] controls)

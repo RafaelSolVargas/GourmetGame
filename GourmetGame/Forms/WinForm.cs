@@ -4,6 +4,7 @@ namespace GourmetGame.Forms;
 
 public partial class WinForm : Form
 {
+    private bool HasProcessed { get; set; } = false;
     public WinForm()
     {
         InitializeComponent();
@@ -19,6 +20,13 @@ public partial class WinForm : Form
 
     private void Event_FormClosing(object? sender, FormClosingEventArgs e)
     {
+        if (HasProcessed)
+        {
+            return;
+        }
+
+        Hide();
+
         ProcessInput();
     }
 
@@ -32,6 +40,8 @@ public partial class WinForm : Form
 
     private void ProcessInput()
     {
+        HasProcessed = true;
+
         GourmetGameController.Handler.RestartNavigation();
     }
 

@@ -32,12 +32,14 @@
             confirmCompleteButton = new Button();
             cancelCompleteButton = new Button();
             newQualityInput = new TextBox();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // completeQuestion
             // 
             completeQuestion.AutoSize = true;
-            completeQuestion.Location = new Point(102, 27);
+            completeQuestion.Location = new Point(112, 27);
             completeQuestion.Name = "completeQuestion";
             completeQuestion.Size = new Size(69, 15);
             completeQuestion.TabIndex = 0;
@@ -45,7 +47,7 @@
             // 
             // confirmCompleteButton
             // 
-            confirmCompleteButton.Location = new Point(64, 90);
+            confirmCompleteButton.Location = new Point(50, 90);
             confirmCompleteButton.Name = "confirmCompleteButton";
             confirmCompleteButton.Size = new Size(75, 23);
             confirmCompleteButton.TabIndex = 1;
@@ -65,10 +67,20 @@
             // 
             // newQualityInput
             // 
-            newQualityInput.Location = new Point(53, 54);
+            newQualityInput.Location = new Point(62, 54);
             newQualityInput.Name = "newQualityInput";
             newQualityInput.Size = new Size(178, 23);
             newQualityInput.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.ImageLocation = "E:\\Work\\Objective\\GourmetGame\\GourmetGame\\Images\\question-icon.png";
+            pictureBox1.Location = new Point(10, 10);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(44, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
             // 
             // CompleteForm
             // 
@@ -76,6 +88,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(284, 136);
+            Controls.Add(pictureBox1);
             Controls.Add(newQualityInput);
             Controls.Add(cancelCompleteButton);
             Controls.Add(confirmCompleteButton);
@@ -84,6 +97,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Complete";
             Load += CompleteForm_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -94,5 +108,6 @@
         private Button confirmCompleteButton;
         private Button cancelCompleteButton;
         private TextBox newQualityInput;
+        private PictureBox pictureBox1;
     }
 }
